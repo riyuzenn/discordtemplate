@@ -42,7 +42,7 @@ pip install discord_template
 ```
 discord create bot_name
 ```
-![](https://cdn.discordapp.com/attachments/856819523523837972/856821043690864650/prev.gif)
+![](https://cdn.discordapp.com/attachments/856819523523837972/856823350402482196/unknown.png)
 
 ## Contributors
 > For contirbuting, see [CONTRIBUTING.md](https://github.com/znqi/discord_template/blob/main/CONTRIBUTING.md)
