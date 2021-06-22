@@ -52,7 +52,7 @@ def startup():
         cprint([('yellow', 'NOTE: '), ('cyan', 'Checking for update... ( You can disable using `discord update disable` )')])
         time.sleep(1)
         try:
-            r = requests.get(url="https://raw.githubusercontent.com/znqi/discord_template/main/version.json").json()
+            r = requests.get(url="https://raw.githubusercontent.com/znqi/discordtemplate/main/version.json").json()
 
         except Exception:
             cprint([('yellow', "WARNING: "), ('cyan', 'Failed to check for updates.')])
@@ -62,7 +62,7 @@ def startup():
 
 
         if __import__("discord_template").__version__ != NEW_VERSION:
-            cprint([('red', 'NEW UPDATE: '), ('cyan', f'Version {NEW_VERSION} is out now! install via pip install --upgrade discord_template\n'), ('yellow', 'RELEASE NOTE: '), ('cyan', f'{RELEASE_NOTE}')])
+            cprint([('red', 'NEW UPDATE: '), ('cyan', f'Version {NEW_VERSION} is out now! install via pip install --upgrade discordtemplate\n'), ('yellow', 'RELEASE NOTE: '), ('cyan', f'{RELEASE_NOTE}')])
             sys.exit()
 
 
@@ -219,7 +219,7 @@ def run():
                 cprint([('yellow', "SETTINGS: "), ('cyan', "Startup config successfully changed.")])
                 sys.exit()
 
-            subprocess.run("pip install --upgrade discord_template")
+            subprocess.run("pip install --upgrade discordtemplate")
         
         else:
             startup()
