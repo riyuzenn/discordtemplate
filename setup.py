@@ -2,11 +2,24 @@
 from setuptools import setup, version
 from discord_template import *
 
+base_url = "https://github.com/znqi/discord_template/"
+
+
+def get_long_description():
+    
+    with open("README.md", encoding="utf-8") as f:
+        readme = f.read()
+
+    return readme
+
 setup(
     name="discord_template",
     description="A new and enhanced boilerplate template for discord.py",
+    long_description=get_long_description(),
+    long_description_content_type='text/markdown',
     author=__author__,
-    url="https://github.com/znqi/discord_template",
+    url=base_url,
+    download_url=f"{base_url}/archive/{__version__}.tar.gz",
     license=__license__,
     include_package_data=True,
     packages=['discord_template', 'discord_template.env'],
@@ -24,5 +37,10 @@ setup(
         "requests",
         "tabulate",
         "discord.py"
+    ],
+    classifiers = [
+        "Development Status :: 4 - Beta",
+        "License :: OSI Approved :: MIT License",
+        "Programming Language :: Python",
     ],
 )
