@@ -6,7 +6,7 @@ base_url = "https://github.com/znqi/discord_template/"
 
 
 def get_long_description():
-    
+
     with open("README.md", encoding="utf-8") as f:
         readme = f.read()
 
@@ -14,7 +14,7 @@ def get_long_description():
 
 setup(
     name="discord_template",
-    description="A new and enhanced boilerplate template for discord.py",
+    description="🔹 A new and enhanced boilerplate template for discord.py",
     long_description=get_long_description(),
     long_description_content_type='text/markdown',
     author=__author__,
