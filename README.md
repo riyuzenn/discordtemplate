@@ -40,7 +40,7 @@ pip install discord_template
      
 ## Usage
 ```
-discord create
+discord create bot_name
 ```
 ![](https://cdn.discordapp.com/attachments/856819523523837972/856821043690864650/prev.gif)
 
