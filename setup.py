@@ -15,7 +15,7 @@ def get_long_description():
     return readme
 
 setup(
-    name="discord_template",
+    name="discordtemplate",
     description="🔹 A new and enhanced boilerplate template for discord.py",
     long_description=get_long_description(),
     long_description_content_type='text/markdown',
