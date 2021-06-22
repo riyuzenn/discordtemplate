@@ -121,7 +121,7 @@ class DiscordTemplate:
                 cprint([('red', "ERROR: "), ('cyan', f"Cannot create @ {self.dir}. The folder already exists.")])
                 sys.exit()
 
-        cprint([("blue", """\n      .o8   o8o                                              .o8  \n     "888   `"'                                             "888  \n .oooo888  oooo   .oooo.o  .ooooo.   .ooooo.  oooo d8b  .oooo888  \nd88' `888  `888  d88(  "8 d88' `"Y8 d88' `88b `888""8P d88' `888  \n888   888   888  `"Y88b.  888       888   888  888     888   888  \n888   888   888  o.  )88b 888   .o8 888   888  888     888   888  \n`Y8bod88P" o888o 8""888P' `Y8bod8P' `Y8bod8P' d888b    `Y8bod88P"""), ("white", """\n\n          - 🔹 A discord bot template for discord.py.\n""")])
+        cprint([("blue", """\n      .o8   o8o                                              .o8  \n     "888   `"'                                             "888  \n .oooo888  oooo   .oooo.o  .ooooo.   .ooooo.  oooo d8b  .oooo888  \nd88' `888  `888  d88(  "8 d88' `"Y8 d88' `88b `888""8P d88' `888  \n888   888   888  `"Y88b.  888       888   888  888     888   888  \n888   888   888  o.  )88b 888   .o8 888   888  888     888   888  \n`Y8bod88P" o888o 8""888P' `Y8bod8P' `Y8bod8P' d888b    `Y8bod88P"""), ("white", f"""\n\n          - 🔹 A discord bot template for discord.py v{__version__}.\n""")])
         questions = [
             {
                 "type": "input",
@@ -194,7 +194,7 @@ class DiscordTemplate:
 
 def help_command():
     clear()
-    cprint([("blue", """\n      .o8   o8o                                              .o8  \n     "888   `"'                                             "888  \n .oooo888  oooo   .oooo.o  .ooooo.   .ooooo.  oooo d8b  .oooo888  \nd88' `888  `888  d88(  "8 d88' `"Y8 d88' `88b `888""8P d88' `888  \n888   888   888  `"Y88b.  888       888   888  888     888   888  \n888   888   888  o.  )88b 888   .o8 888   888  888     888   888  \n`Y8bod88P" o888o 8""888P' `Y8bod8P' `Y8bod8P' d888b    `Y8bod88P"""), ("white", """\n\n          - 🔹 A discord bot template for discord.py.\n""")])
+    cprint([("blue", """\n      .o8   o8o                                              .o8  \n     "888   `"'                                             "888  \n .oooo888  oooo   .oooo.o  .ooooo.   .ooooo.  oooo d8b  .oooo888  \nd88' `888  `888  d88(  "8 d88' `"Y8 d88' `88b `888""8P d88' `888  \n888   888   888  `"Y88b.  888       888   888  888     888   888  \n888   888   888  o.  )88b 888   .o8 888   888  888     888   888  \n`Y8bod88P" o888o 8""888P' `Y8bod8P' `Y8bod8P' d888b    `Y8bod88P"""), ("white", f"""\n\n          - 🔹 A discord bot template for discord.py v{__version__}.\n""")])
     print("")
     cprint([('yellow', 'Version: '), ('cyan', '{}'.format(__version__))])
     cprint([('yellow', 'discord.py: '), ('cyan', '{}'.format(__import__('discord').__version__))])
@@ -238,10 +238,13 @@ def run():
                 DiscordTemplate(folder_name)
 
         elif sys.argv[1] == "run":
+            # soon
             pass
 
         elif sys.argv[1] == "heroku":
+            # soon
             pass
+            
            
     except IndexError:
         help_command()
