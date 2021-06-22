@@ -1,4 +1,4 @@
 {
-  "version": "1.0",
-  "note": "Release discord_template | Install via `pip install discord_template`"
+  "version": "1.1.0",
+  "note": "Fix auto update bugs as well as `create` command"
 }
