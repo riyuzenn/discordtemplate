@@ -1,6 +1,8 @@
 
-from setuptools import setup, version
-from discord_template import *
+from setuptools import setup
+from discord_template import ( 
+        __version__, __author__, __license__
+    )
 
 base_url = "https://github.com/znqi/discord_template/"
 
@@ -17,10 +19,9 @@ setup(
     description="🔹 A new and enhanced boilerplate template for discord.py",
     long_description=get_long_description(),
     long_description_content_type='text/markdown',
-    author="Zenqi",
+    author=__author__,
     url=base_url,
-    download_url=f"{base_url}/archive/{__version__}.tar.gz",
-    license="MIT",
+    license=__license__,
     include_package_data=True,
     packages=['discord_template', 'discord_template.env'],
     python_requires=">=3.5",
