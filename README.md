@@ -32,7 +32,7 @@ Discord Template offers you a development and deployment system (heroku) (commin
      
 ## Installation
      
-Discord Template is available on [PyPi]("https://pypi.org")
+Discord Template is available on [PyPi](https://pypi.org)
 ```
 pip install discord_template
 ```
@@ -42,10 +42,10 @@ pip install discord_template
 ```
 discord create
 ```
-<img src='https://cdn.discordapp.com/attachments/856819523523837972/856821043690864650/prev.gif'/>
+![](https://cdn.discordapp.com/attachments/856819523523837972/856821043690864650/prev.gif)
 
 ## Contributors
-> For contirbuting, see [CONTRIBUTING.md]("https://github.com/znqi/discord_template/blob/main/CONTRIBUTING.md")
+> For contirbuting, see [CONTRIBUTING.md](https://github.com/znqi/discord_template/blob/main/CONTRIBUTING.md)
 
 Thanks to these contributors who made the project maintained!
 
