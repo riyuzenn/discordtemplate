@@ -33,7 +33,7 @@ import time
 import subprocess
 from tabulate import tabulate
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path. abspath(__file__))
 
 def startup():
     
@@ -62,7 +62,9 @@ def startup():
 
 
         if __import__("discord_template").__version__ != NEW_VERSION:
-            cprint([('red', 'NEW UPDATE: '), ('cyan', f'Version {NEW_VERSION} is out now! install via pip install --upgrade discordtemplate\n'), ('yellow', 'RELEASE NOTE: '), ('cyan', f'{RELEASE_NOTE}')])
+            cprint([('red', 'NEW UPDATE: '), ('cyan', f'Version {NEW_VERSION} is out now! Installing the update...\n'), ('yellow', 'RELEASE NOTE: '), ('cyan', f'{RELEASE_NOTE}')])
+            time.sleep(2)
+            subprocess.run("pip install --upgrade discordtemplate")
             sys.exit()
 
 
@@ -208,16 +210,21 @@ def run():
 
     try:
         if sys.argv[1] == "update":
-        
-            if sys.argv[2] == "disable":
-                config_startup_settings({"auto_update": False})
-                cprint([('yellow', "SETTINGS: "), ('cyan', "Startup config successfully changed.")])
-                sys.exit()
 
-            elif sys.argv[2] == "enable":
-                config_startup_settings({"auto_update": True})
-                cprint([('yellow', "SETTINGS: "), ('cyan', "Startup config successfully changed.")])
-                sys.exit()
+            try:
+
+                if sys.argv[2] == "disable":
+                    config_startup_settings({"auto_update": False})
+                    cprint([('yellow', "SETTINGS: "), ('cyan', "Startup config successfully changed.")])
+                    sys.exit()
+
+                elif sys.argv[2] == "enable":
+                    config_startup_settings({"auto_update": True})
+                    cprint([('yellow', "SETTINGS: "), ('cyan', "Startup config successfully changed.")])
+                    sys.exit()
+            
+            except IndexError:
+                pass
 
             subprocess.run("pip install --upgrade discordtemplate")
         
@@ -225,17 +232,22 @@ def run():
             startup()
         
         if sys.argv[1] == "create":
-            if sys.argv[2] == ".":
-                folder_name = None
+
+            folder_name = None
             
-            else:
-                folder_name = sys.argv[2]
-
             try:
-                DiscordTemplate(folder_name)
-
+                if sys.argv[2] == ".":
+                    folder_name = None
+                
+                else:
+                    folder_name = sys.argv[2]
+            
             except IndexError:
-                DiscordTemplate(folder_name)
+                pass
+            
+
+            DiscordTemplate(folder_name)
+
 
         elif sys.argv[1] == "run":
             # soon
