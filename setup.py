@@ -1,13 +1,13 @@
 
 from setuptools import setup, version
-from discord_template import __version__
+from discord_template import *
 
 setup(
     name="discord_template",
     description="A new and enhanced boilerplate template for discord.py",
-    author="Zenqi",
+    author=__author__,
     url="https://github.com/znqi/discord_template",
-    license="MIT",
+    license=__license__,
     include_package_data=True,
     packages=['discord_template', 'discord_template.env'],
     python_requires=">=3.5",
