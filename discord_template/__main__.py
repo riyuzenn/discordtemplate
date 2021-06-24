@@ -170,7 +170,7 @@ class DiscordTemplate:
         
         print("")
         cprint([('yellow', "CREATING: "), ('cyan', "Main file @ {}".format(self.dir))])
-        self.write_main_file(self.dir, render_template("main", d_intents=result[2], username=getpass.getuser()))
+        self.write_main_file(self.dir, render_template("main", d_intents=result[3], username=getpass.getuser()))
 
 
         cprint([('yellow', "CREATING: "), ('cyan', "Config file @ {}".format(self.dir))])
