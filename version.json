@@ -1,4 +1,4 @@
 {
-  "version": "1.1.0",
-  "note": "Fix auto update bugs as well as `create` command"
+  "version": "1.1.1",
+  "note": "Fix startup settings. I really messed up on previous version, sorrryy."
 }
