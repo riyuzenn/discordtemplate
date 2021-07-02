@@ -24,7 +24,7 @@ from InquirerPy import prompt, inquirer, get_style
 from InquirerPy.separator import Separator
 from jinja2 import Environment, FileSystemLoader
 import getpass
-import requests
+import urllib.request
 import shutil
 import sys
 import json
@@ -35,30 +35,43 @@ from tabulate import tabulate
 
 BASE_DIR = os.path.dirname(os.path. abspath(__file__))
 
-def startup():
-    
+def read_startup_file(path: str=None) -> dict:
+    if path == None:
+        raise FileNotFoundError("Path should\'nt be null.")
+
     try:
-        with open(f"{BASE_DIR}\\startup", "r") as f:
+        with open(path, "r") as f:
             data = json.load(f)
             f.close()
-
+    
     except FileNotFoundError:
-        with open(f"{BASE_DIR}\\startup", "w") as f:
-            json.dump({'auto_update': True}, f)
+        print("[red]Startup file is not found, creating a new one[/red]")
+        with open(path, "w") as f:
+            data = {'auto_update': True}
+            json.dump(data, f)
             f.close()
 
+    return data
+    
+
+def startup():
+    
+    data = read_startup_file(path=f"{BASE_DIR}\\startup")
     if data['auto_update'] == True:
 
         cprint([('yellow', 'NOTE: '), ('cyan', 'Checking for update... ( You can disable using `discord update disable` )')])
         time.sleep(1)
         try:
-            r = requests.get(url="https://raw.githubusercontent.com/znqi/discordtemplate/main/version.json").json()
+            req = urllib.request.urlopen("https://raw.githubusercontent.com/znqi/discordtemplate/main/version.json")
+            result = json.loads(
+                req.read().decode("utf-8") # Read the request data and then decode it from bytes object to string.
+            )
 
         except Exception:
             cprint([('yellow', "WARNING: "), ('cyan', 'Failed to check for updates.')])
 
-        NEW_VERSION     = r['version']
-        RELEASE_NOTE    = r['note']
+        NEW_VERSION     = result['version']
+        RELEASE_NOTE    = result['note']
 
 
         if __import__("discord_template").__version__ != NEW_VERSION:
