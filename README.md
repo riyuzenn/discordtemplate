@@ -32,7 +32,7 @@ Discord Template offers you a development and deployment system (heroku) (coming
      
 ## Installation
      
-Discord Template is available on [PyPi](https://pypi.org)
+Discord Template is available on [PyPi](https://pypi.org/project/discordtemplate/)
 ```
 pip install discordtemplate
 ```
