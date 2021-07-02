@@ -269,6 +269,10 @@ def run():
         elif sys.argv[1] == "heroku":
             # soon
             pass
+
+        elif sys.argv[1] == "help":
+            # Add help command
+            help_command()
             
            
     except IndexError:
