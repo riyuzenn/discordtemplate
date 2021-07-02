@@ -4,7 +4,7 @@ from discord_template import (
         __version__, __author__, __license__
     )
 
-base_url = "https://github.com/znqi/discord_template/"
+base_url = "https://github.com/znqi/discordtemplate/"
 
 
 def get_long_description():
