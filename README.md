@@ -27,14 +27,14 @@
 ## About 
 
 **Discord Template** is a Discord CLI used for creating boilerplate for bot developers out there who want to develop bots, easily and fast!
-Discord Template offers you a development and deployment system (heroku) (comming soon). It's easy to use and reliable.
+Discord Template offers you a development and deployment system (heroku) (coming soon). It's easy to use and reliable.
 
      
 ## Installation
      
 Discord Template is available on [PyPi](https://pypi.org)
 ```
-pip install discord_template
+pip install discordtemplate
 ```
      
      
